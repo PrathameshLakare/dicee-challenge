@@ -1,18 +1,19 @@
+
 var heading = document.querySelector("h1");
 var imgFirst = document.querySelector(".img1");
 var imgSecond = document.querySelector(".img2");
 
 function randomImageSelector() {
-    var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-    var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+    var randomNumber1 = Math.floor(Math.random() * 6) + 1; // 1-6
+    var randomNumber2 = Math.floor(Math.random() * 6) + 1; // 1-6
 
     //changing h1 to say which one is the winner
     if(randomNumber1 === randomNumber2){
-        heading.innerText="Draw!";
+        heading.innerHTML="Draw!";
     }else if (randomNumber1 > randomNumber2){
-        heading.innerText="🚩Player 1 Wins!";
+        heading.innerHTML="🚩Player 1 Wins!";
     }else{
-        heading.innerText="Player 2 Wins!🚩";
+        heading.innerHTML="Player 2 Wins!🚩";
     }
 
     //for first image
@@ -48,3 +49,7 @@ function randomImageSelector() {
 }
 
 randomImageSelector();
+
+// we can also do following istead of writting all this if and else statement.
+// var randomImages1 = "images/dice" + randomNumber1 + ".png";
+// document.querrySelectorAll("img")[0].setAttribute("src","randomImages1");
