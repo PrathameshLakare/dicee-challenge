@@ -1,9 +1,19 @@
+var heading = document.querySelector("h1");
 var imgFirst = document.querySelector(".img1");
 var imgSecond = document.querySelector(".img2");
 
 function randomImageSelector() {
     var randomNumber1 = Math.floor(Math.random() * 6) + 1;
     var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+    //changing h1 to say which one is the winner
+    if(randomNumber1 === randomNumber2){
+        heading.innerText="Draw!";
+    }else if (randomNumber1 > randomNumber2){
+        heading.innerText="🚩Player 1 Wins!";
+    }else{
+        heading.innerText="Player 2 Wins!🚩";
+    }
 
     //for first image
     if (randomNumber1 === 1) {
@@ -34,6 +44,7 @@ function randomImageSelector() {
     } else {
         imgSecond.setAttribute("src", "images/dice6.png");
     }
+
 }
 
 randomImageSelector();
